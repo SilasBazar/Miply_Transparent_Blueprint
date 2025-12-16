@@ -28,6 +28,14 @@ jobs:
           mkdir -p dist/includes
           cp -R src/includes/* dist/includes/
 
+      - name: Publish to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          # keep_files: false  # uncomment to remove files not present in dist
+
       - name: Update `docs/` folder on main (for Pages source)
         env:
           GIT_AUTHOR_NAME: github-actions[bot]

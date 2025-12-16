@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIPLY // The MSP to MIP Transformation</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="blueprint-grid min-h-screen flex flex-col selection:bg-amber-500 selection:text-slate-900" style="background-color: var(--color-bg); color: var(--color-text); font-family: 'Inter', sans-serif; overflow-x: hidden;">
+
+    <!-- HEADER (loaded from /includes/header.html at runtime) -->
+    <div id="site-header"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow pt-24">
+
+        <!-- HERO SECTION -->
+        <section class="relative min-h-[70vh] flex items-center">
+            
+            <!-- Friendly Background Elements -->
+            <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[40%] h-[80%] opacity-30 pointer-events-none hidden lg:block">
+                <!-- Abstract "Construction" Diagram -->
+                <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full animate-float">
+                    <rect x="50" y="50" width="300" height="300" rx="4" stroke="#38bdf8" stroke-width="1" stroke-dasharray="10 10"/>
+                    <rect x="80" y="80" width="100" height="100" rx="4" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+                    <circle cx="280" cy="280" r="40" stroke="#f59e0b" stroke-width="1"/>
+                    <path d="M180 130 L 280 240" stroke="#94a3b8" stroke-width="1"/>
+                    <rect x="240" y="100" width="80" height="20" rx="2" fill="#38bdf8" fill-opacity="0.2"/>
+                    <rect x="100" y="240" width="120" height="80" rx="2" stroke="#94a3b8" stroke-width="1"/>
+                </svg>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 w-full z-10">
+                <div class="max-w-3xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-mono mb-6">
+                        <i class="fas fa-wrench text-[10px]"></i> WORKSHOP STATUS: OPEN
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight font-inter">
+                        INTELLIGENCE OVER <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-200">INFRASTRUCTURE.</span>
+                    </h1>
+                    
+                    <p class="text-slate-400 text-lg md:text-xl mb-8 max-w-2xl leading-relaxed">
+                        The MSP industry is changing. We give you the strategic frameworks, toolkits, and hands-on guidance to evolve from a service provider into a <span class="text-amber-400 font-semibold">Managed Intelligence Provider (MIP)</span>.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="btn-primary px-8 py-4 text-sm flex items-center justify-center gap-2 group shadow-lg shadow-amber-500/10">
+                            START TRANSFORMATION
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <button class="btn-outline px-8 py-4 text-sm flex items-center justify-center gap-2">
+                            <i class="far fa-play-circle"></i> View_Origin_Story
+                        </button>
+                    </div>
+
+                    <div class="mt-12 flex items-center gap-4 text-xs text-slate-500 font-mono">
+                        <span>// NOT A VENDOR.</span>
+                        <span>// NOT A GENERIC CONSULTANT.</span>
+                        <span class="text-sky-400">// WE ARE BUILDERS.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUSTED BY / COMMUNITY -->
+        <section class="border-y border-white/5 bg-[#0f172a] py-8 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 mb-6 flex items-center gap-4">
+                 <div class="h-px bg-slate-800 flex-grow"></div>
+                 <span class="text-slate-500 text-xs font-mono uppercase tracking-widest">Empowering Next-Gen Providers</span>
+                 <div class="h-px bg-slate-800 flex-grow"></div>
+            </div>
+            
+            <!-- Logos (Text based for now to keep it self-contained) -->
+            <div class="flex flex-wrap justify-center gap-x-12 gap-y-8 px-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="flex items-center gap-2 text-slate-300 font-bold text-lg font-mono"><i class="fas fa-cloud text-sky-500"></i> CloudOps</div>
+                <div class="flex items-center gap-2 text-slate-300 font-bold text-lg font-mono"><i class="fas fa-network-wired text-amber-500"></i> NexusIT</div>
+                <div class="flex items-center gap-2 text-slate-300 font-bold text-lg font-mono"><i class="fas fa-shield-alt text-emerald-500"></i> SecureFlow</div>
+                <div class="flex items-center gap-2 text-slate-300 font-bold text-lg font-mono"><i class="fas fa-database text-purple-500"></i> DataCore</div>
+                <div class="flex items-center gap-2 text-slate-300 font-bold text-lg font-mono"><i class="fas fa-code-branch text-pink-500"></i> LogicStream</div>
+            </div>
+        </section>
+
+        <!-- PROBLEM / SOLUTION (THE GUILD) -->
+        <section id="manifesto" class="py-24 max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Traditional MSPs are hitting a ceiling. It's time to break through.</h2>
+                    <div class="space-y-6 text-slate-400">
+                        <p>
+                            You feel the pressure. Commoditization is eating margins. Clients are asking about AI, and "installing another tool" isn't the answer anymore.
+                        </p>
+                        <p>
+                            At <span class="text-white font-bold">MIPLY</span>, we don't just sell you software. We act as a <span class="text-amber-400">Guild Hall</span> for the future of IT services. We teach you to operationalize intelligence—inside your business and across your client offerings.
+                        </p>
+                        <ul class="space-y-3 mt-4 font-mono text-sm">
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i class="fas fa-check text-green-400"></i> No hype. Just strategy.
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i class="fas fa-check text-green-400"></i> No vendor lock-in.
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i class="fas fa-check text-green-400"></i> Full capability transfer.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Visual Element: The "Blueprint" -->
+                <div class="relative bg-slate-800 rounded-xl border border-slate-700 p-1 shadow-2xl">
+                    <div class="bg-[#0f172a] rounded-lg p-6 md:p-8 border border-white/5 relative overflow-hidden">
+                        <!-- Grid overlay -->
+                        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#38bdf8 1px, transparent 1px); background-size: 20px 20px;"></div>
+                        
+                        <div class="relative z-10">
+                            <div class="flex justify-between items-center mb-8 border-b border-slate-800 pb-4">
+                                <span class="text-xs font-mono text-amber-500">FIG 1.0: EVOLUTION</span>
+                                <span class="text-xs font-mono text-slate-500">ID: MSP-TO-MIP</span>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <!-- Old Way -->
+                                <div class="flex items-center gap-4 opacity-50">
+                                    <div class="w-12 h-12 bg-slate-800 rounded flex items-center justify-center border border-slate-700">
+                                        <i class="fas fa-server text-slate-500"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-bold text-slate-400 line-through">Legacy MSP</div>
+                                        <div class="text-xs text-slate-600 font-mono">Fixing Broken Tech</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Arrow -->
+                                <div class="pl-5 text-slate-600">
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+
+                                <!-- New Way -->
+                                <div class="flex items-center gap-4 bg-slate-800/50 p-3 rounded border border-amber-500/30">
+                                    <div class="w-12 h-12 bg-amber-500/20 rounded flex items-center justify-center border border-amber-500/50 text-amber-500 shadow-[0_0_15px_rgba(245,158,11,0.2)]">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-bold text-white">MIP (Intelligence Provider)</div>
+                                        <div class="text-xs text-amber-500/80 font-mono">Driving Intelligent Business Outcomes</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OFFERINGS (ARCHITECTURE) -->
+        <section id="strategy" class="bg-[#0b1120] py-24 border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <div class="inline-block px-3 py-1 rounded bg-sky-500/10 text-sky-400 text-xs font-mono mb-4 border border-sky-500/20">
+                        OFFER ARCHITECTURE
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4">How We Build Together</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto">
+                        We don't do it for you. We co-develop with you so you own the capability.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1: Strategy -->
+                    <div class="workshop-card p-8 group">
+                        <div class="marker-corner"></div>
+                        <div class="w-14 h-14 bg-slate-800 rounded-lg flex items-center justify-center mb-6 border border-slate-700 group-hover:border-sky-500/50 group-hover:text-sky-400 transition-colors text-slate-400 text-2xl">
+                            <i class="fas fa-chess"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">MIP Strategy & Design</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Readiness assessments and strategic roadmaps. We help you design the service model before you write a single line of code.
+                        </p>
+                        <ul class="text-xs font-mono text-slate-500 space-y-2 mb-6">
+                            <li>> Readiness_Assessment</li>
+                            <li>> Gap_Analysis</li>
+                            <li>> Strategic_Roadmaps</li>
+                        </ul>
+                        <a href="#" class="text-sky-400 text-sm font-bold hover:text-sky-300 flex items-center gap-2">
+                            Explore Strategy <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Card 2: Build Lab -->
+                    <div id="build-lab" class="workshop-card p-8 group border-amber-500/30 bg-[#162032]">
+                        <div class="absolute top-0 right-0 bg-amber-500 text-[#0f172a] text-[10px] font-bold px-2 py-1 font-mono">SIGNATURE</div>
+                        <div class="w-14 h-14 bg-amber-500/10 rounded-lg flex items-center justify-center mb-6 border border-amber-500/20 text-amber-500 text-2xl">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">MIPLY Build Lab</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Hands-on co-development. We embed with your team to build internal automations and client-facing solutions.
+                        </p>
+                        <ul class="text-xs font-mono text-slate-500 space-y-2 mb-6">
+                            <li>> Internal_Solutions</li>
+                            <li>> Client_Deliverables</li>
+                            <li>> Private_Label_Delivery</li>
+                        </ul>
+                        <a href="#" class="text-amber-500 text-sm font-bold hover:text-amber-400 flex items-center gap-2">
+                            Enter the Lab <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Card 3: Guild Enablement -->
+                    <div id="guild" class="workshop-card p-8 group">
+                        <div class="marker-corner"></div>
+                        <div class="w-14 h-14 bg-slate-800 rounded-lg flex items-center justify-center mb-6 border border-slate-700 group-hover:border-emerald-500/50 group-hover:text-emerald-400 transition-colors text-slate-400 text-2xl">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Guild Enablement</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Engineer upskilling and ongoing advisory. Join a peer group of builders, not just a classroom of students.
+                        </p>
+                        <ul class="text-xs font-mono text-slate-500 space-y-2 mb-6">
+                            <li>> Engineer_Upskilling</li>
+                            <li>> Playbooks_&_Templates</li>
+                            <li>> Peer_Group_Ops</li>
+                        </ul>
+                        <a href="#" class="text-emerald-400 text-sm font-bold hover:text-emerald-300 flex items-center gap-2">
+                            Join the Guild <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER (loaded from /includes/footer.html at runtime) -->
+        <div id="site-footer"></div>
+
+    </main>
+
+    <script>
+      // Simple runtime include loader for header/footer
+      async function loadInclude(id, url) {
+        try {
+          const res = await fetch(url);
+          if (res.ok) document.getElementById(id).innerHTML = await res.text();
+        } catch (e) {
+          // silent fail for local file preview (no server)
+          console.warn('Include load failed', url, e);
+        }
+      }
+      loadInclude('site-header','/includes/header.html');
+      loadInclude('site-footer','/includes/footer.html');
+    </script>
+
+</body>
+</html>

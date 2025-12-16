@@ -1,0 +1,31 @@
+/* Design tokens — derived from original page */
+:root {
+  --color-bg: #0f172a;
+  --color-panel: #1e293b;
+  --color-text: #f8fafc;
+  --color-muted: #94a3b8;
+  --color-accent: #f59e0b;
+  --color-accent-2: #38bdf8;
+  --color-accent-highlight: #fbbf24;
+  --border-subtle: rgba(148, 163, 184, 0.1);
+  --radius-sm: 8px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom utilities and component styles */
+.font-mono { font-family: 'JetBrains Mono', monospace !important; letter-spacing: -0.02em; }
+.blueprint-grid { background-image: linear-gradient(var(--border-subtle) 1px, transparent 1px), linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px); background-size: 40px 40px; background-position: center top; }
+.workshop-card { background: var(--color-panel); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); transition: all 0.3s ease; position: relative; overflow: hidden; }
+.workshop-card:hover { border-color: var(--color-accent-2); transform: translateY(-4px); box-shadow: 0 10px 30px -10px rgba(56,189,248,0.2); }
+.marker-corner::after { content: ''; position: absolute; top: 0; right: 0; width: 0; height: 0; border-style: solid; border-width: 0 20px 20px 0; border-color: transparent var(--color-accent) transparent transparent; opacity: 0.8; }
+.btn-primary { background: var(--color-accent); color: #0f172a; font-weight: 700; border-radius: 6px; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+.btn-primary:hover { background: var(--color-accent-highlight); transform: scale(1.02); box-shadow: 0 0 15px rgba(245, 158, 11, 0.4); }
+.btn-outline { border: 1px solid var(--color-muted); color: var(--color-muted); border-radius: 6px; transition: all 0.2s; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; letter-spacing: 0.05em; }
+.btn-outline:hover { border-color: var(--color-text); color: var(--color-text); background: rgba(255,255,255,0.03); }
+
+/* Small helpers */
+.highlight-text { color: var(--color-accent-2); }
+.highlight-amber { color: var(--color-accent); }

@@ -1,0 +1,8 @@
+@import "./_variables.scss";
+@import "./_base.scss";
+@import "./_components.scss";
+
+/* Tailwind directives (postcss will process this) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
